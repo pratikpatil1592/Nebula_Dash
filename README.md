@@ -11,7 +11,10 @@ Before running the project locally make sure you have following things installed
   
 
 To run the app go through the following steps:
-1. Make sure you install all above contents.
+1. Make sure you install all the packages with following command.
+```
+>> python -r requirements.txt
+```
 
 2. Create a database in MySql and use it:
 ```
