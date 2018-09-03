@@ -1,6 +1,0 @@
-web.py
-Jinja2
-Werkzeug
-gunicorn
-folium
-ipywidgets
