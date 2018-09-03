@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Log in to Nebula Dash</title>
+
+    <link href="/static/css/1bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/static/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/static/images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body class="text-center">
+  	<div class="container">
+  		{% include 'includes/_messages.html' %}
+  		{% block body %}
+	    <form class="form-signin" method="POST" action="">
+	      <img class="mb-4" src="/static/images/logo-dark.png" alt="">
+	      <h1 class="h3 mb-3 font-weight-normal">Log in to your account</h1>
+	      <label for="inputEmail" class="sr-only">Username</label>
+	      <input type="text" name="username" class="form-control" placeholder="Username", value={{request.form.username}}>
+	      <label for="inputPassword" class="sr-only">Password</label>
+	      <input type="password" name="password" class="form-control" placeholder="Password", value={{request.form.password}}>
+	      <p>
+	      	<input type="submit" class="btn btn-primary" value="Submit">
+			<a href="/register"><button type="button" class="btn btn-primary">Register</button></a>
+	      </p>
+	      <a href="/"><button type="button" class="btn btn-default">← Home</button></a>
+	    </form>
+	    {% endblock %}
+    </div>
+   </body>
+</html>

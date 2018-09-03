@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+	<head>
+	
+		<title>Nebula Dash</title>
+		
+		<!-- META DATA -->
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		
+		<!-- CSS Global Compulsory -->
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/style.css" >
+		
+		<!-- CSS Implementing Plugins -->
+		<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/css/ionicons.min.css">
+		<link rel="stylesheet" href="/static/css/animate.min.css">
+		<link rel="stylesheet" href="/static/css/flexslider.css">
+		<link rel="stylesheet" href="/static/css/vegas.min.css">
+		<link rel="stylesheet" href="/static/css/nivo-lightbox.css">
+		<link rel="stylesheet" href="/static/css/nivo-lightbox/themes/default/default.css" type="text/css">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- 		[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif] -->
+		
+		<!--[if lt IE 11]>
+			<link rel="stylesheet" type="text/css" href="css/ie.css">
+		<![endif]-->
+		
+		<!-- FONTS -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700,900' rel='stylesheet' type='text/css'>
+		
+		<!-- JS -->
+		<script type="text/javascript" src="/static/js/modernizr.js"></script>
+		
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="/static/images/favicon.ico">
+		<link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/static/images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/static/images/apple-touch-icon-114x114.png">
+	
+	</head>
+	<body>
+		<!-- START PRELOADER -->
+		<div id="preloader">
+			<div id="loading-animation">&nbsp;</div>
+		</div>
+		<!-- END PRELOADER -->
+		
+		<!-- Site Logo -->
+		<div class="site-logo">
+			<a href="#home" class="move-to" data-section-background="image-1">
+				<img src="/static/images/logo.png" alt="" />
+			</a>
+		</div>
+		
+		<!-- Site Nav -->
+		<nav class="site-nav">
+			<ul>
+				<li><a href="#home" title="Home" class="move-to active" data-section-background="image-1"><span></span></a></li>
+				<li><a href="#about" title="About" class="move-to" data-section-background="image-2"><span></span></a></li>
+				{% if session.logged_in == NULL %}
+					<li><a href="/login" title="Login"><span></span></a></li>
+				{% else %}
+					<li><a href="/logout" title="Logout"><span></span></a></li>
+				{% endif %}
+				<li><a href="#contact" title="Contact" class="move-to" data-section-background="image-3"><span></span></a></li>
+			</ul>
+			<div class="line vertical top"></div>
+			<div class="line vertical bottom"></div>
+		</nav>
+
+		<div class="main-container">
+							
+			<!-- Home Section -->
+			<section id="home" class="section home on-menu fullscreen-element">
+				<div class="section-container">
+					<div class="element-table">
+						<div class="table-cell">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12 text-center">
+									
+										<div class="flexslider textslider bottom-margin animated" data-animation="fadeInUp" data-animation-delay="700">
+											<h1>Welcome to Nebula Dash</h1>
+											<!-- <ul class="slides">
+												<li>
+													<h1>We Create Awesome Themes</h1>
+												</li>
+												<li>
+													<h1>Cany Creative Design Studio</h1>
+												</li>
+												<li>
+													<h1>Creative Digital Solution</h1>
+												</li>
+											</ul> -->
+										</div>
+										<p class="lead animated" data-animation="fadeInUp" data-animation-delay="800">Welcome to Nebula Dash, Pratik's first webapp based on Geographic Data Visualization.</p>
+										<div class="buttons-group animated" data-animation="fadeInUp" data-animation-delay="900">
+											{% if session.logged_in == NULL %}
+												<a href="/register" class="button button-border button-white">Register</a>
+												<a href="/login" class="button button-border button-white">Login</a>
+											{% else %}
+												<a href="/dashboard" class="button button-border button-white">Dashboard</a>
+												<a href="/logout" class="button button-border button-white">Logout</a>
+											{% endif %}
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- About Section -->
+			<section id="about" class="section on-menu fullscreen-element">	
+				<div class="section-container">
+					<div class="element-table">
+						<div class="table-cell">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12 text-center">
+									
+										<div class="section-header animated" data-animation="fadeInUp" data-animation-delay="700">
+											<h2 class="section-title">About Me</h2>
+											<div class="line-separate line-white line-center"><span></span></div>
+											<p>Everything you need to know about me</p>
+										</div>
+										<div class="row animated" data-animation="fadeInUp" data-animation-delay="800">
+											<div class="col-md-5 text-left">
+												<div class="heading-block">
+													<h4>Who is <span>Pratik</span>.</h4>
+												</div>
+												<p>Pratik is a 26 year old person with a Master's Degree in Computer Science and Engineering. He is a Pune based website developer and a researcher with special interest for Data Science, Data Analytics, Data Visualization, Linguistics and Machine Learning.</p>
+											</div>
+											<div class="col-md-2 text-left">
+												<!-- <div class="heading-block">
+													<h4>Pratik's <span>Mission</span>.</h4>
+												</div>
+												<p>To work hard and make a name in the IT industry especially in the domain of Data Science. Also, to take the company he works for to a whole higher level. </p> -->
+											</div>
+											<div class="col-md-5 text-left">
+												<div class="heading-block">
+													<h4>Nebula Dash.</h4>
+												</div>
+												<p>Nebula Dash is an application developed by Pratik which consists of a dashboard representing the earthquake data geographically with respect to map. It is built using Python, Flash, MySQL, HTML/CSS and JavaScript.</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+
+
+			<!-- Contact Section -->
+			<section id="contact" class="section on-menu fullscreen-element">
+				<div class="section-container">
+					<div class="element-table">
+						<div class="table-cell">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-10 col-md-offset-1 text-center">
+									
+										<div class="section-header no-padding animated" data-animation="fadeInUp" data-animation-delay="700">
+											<h2 class="section-title">Contact Me</h2>
+											<div class="line-separate line-white line-center"><span></span></div>
+											<p>Feel-free to drop a message below anytime.</p>
+										</div>
+										
+										<hr class="animated" data-animation="fadeInUp" data-animation-delay="800"/>
+										
+										<div class="row animated" data-animation="fadeInUp" data-animation-delay="900">
+											<div class="col-md-5">
+												<div class="text-left adress">
+													<i class="ion-ios-location-outline"></i>
+													<p class="contact-way text-uppercase">Address</p>
+													Elite Garden, Near Westend Mall, Aundh, Pune - 411007.
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="text-left adress">
+													<i class="ion-ios-telephone-outline"></i>
+													<p class="contact-way text-uppercase">Phone Number</p>
+													+91 9637065024
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="text-left adress">
+													<i class="ion-ios-email-outline"></i>
+													<p class="contact-way text-uppercase">E-mail Address</p>
+													pratik.the.web.designer@gmail.com
+												</div>
+											</div>
+										</div>
+										
+										<hr class="animated" data-animation="fadeInUp" data-animation-delay="1000"/>
+										
+										<!-- Contact Form -->
+										<div class="contact-forn animated" data-animation="fadeInUp" data-animation-delay="1100">
+											<form id="cf" name="cf" action="include/sendemail.php" method="post">
+												<div class="row">
+													<div class="col-md-4">
+														<input type="text" id="cf-name" name="cf-name" placeholder="Name" class="required">
+													</div>
+													<div class="col-md-4">
+														<input type="email" id="cf-email" name="cf-email" placeholder="Email Address." class="contact-form-email required">
+													</div>
+													<div class="col-md-4">
+														<input type="text" id="cf-subject" name="cf-subject" placeholder="Subject" class="contact-form-subject required">
+													</div>
+													<div class="col-md-12">
+														<textarea id="cf-message" name="cf-message" placeholder="Message" class="required" rows="7"></textarea>
+													</div>
+												</div>
+												<input type="text" name="botcheck" class="hidden">
+												<button class="button button-border button-white" type="submit" id="cf-submit" name="cf-submit" value="submit">Send Message</button>
+											</form>
+											<div class="response-message"></div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+				
+		</div>
+		
+		<!-- Overlay -->
+		<div class="overlay">
+			<div class="gradient-overlay background-blue-dark opacity-60"></div>
+		</div>
+		<div class="background-layer cover-background image-1"></div>
+		
+		<!-- Footer -->
+		<footer class="site-footer">
+			<p class="copyright">© Pratik Patil. All Rights Reserved</p>
+			<nav class="socials-icons">
+				<ul>
+					<li><a href="https://twitter.com/pratikpatil1592" target="_blank"><i class="ion-social-twitter"></i></a></li>
+					<li><a href="https://facebook.com/pratik.the.hacker.007" target="_blank"><i class="ion-social-facebook"></i></a></li>
+				</ul> 
+				<div class="line horizontal left"></div>
+			</nav>
+		</footer>
+		
+		<!-- JS -->
+		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/static/js/plugins.js"></script>
+	
+		<script type="text/javascript" src="/static/js/main.js"></script>
+	</body>
+</html>

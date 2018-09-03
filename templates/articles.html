@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/images/favicon.ico">
+
+    <title>Nebula Dash Dashboard</title>
+
+    <link href="/static/css/dbootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/"><img src="/static/images/logo.png" alt="" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+	      <ul class="navbar-nav mr-auto px-3">
+	        {% if session.logged_in %}
+	        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+	        <li class="nav-item text-nowrap"><a class="nav-link" href="/logout">Logout</a></li>
+	      	{% else %}
+	        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+	        <li class="nav-item text-nowrap"><a class="nav-link" href="/login">Login</a></li>
+	      {% endif %}
+	      </ul>
+	  </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="/dashboard">
+                  <span data-feather="grid"></span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  <span data-feather="home"></span>
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#about">
+                  <span data-feather="clipboard"></span>
+                  About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/articles">
+                  <span data-feather="file-text"></span>
+                  Articles<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/visuals">
+                  <span data-feather="bar-chart-2"></span>
+                  Map Visualization
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/datasets">
+                  <span data-feather="database"></span>
+                  Data Tables
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#contact">
+                  <span data-feather="phone"></span>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Articles<br></h1>
+          </div>
+
+          {% include 'includes/_messages.html' %}
+          {% block body %}
+          <a class="btn btn-success" href="/add_article">Add Article</a>
+          <hr>
+          <table class="table table-striped">
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Date</th>
+				<th></th>
+				<th></th>
+			</tr>
+			{% for article in articles %}
+			<tr>
+				<td>{{article.id}}</td>
+              	<td><a href="article/{{article.id}}">{{article.title}}</a></td>
+				<td>{{article.author}}</td>
+				<td>{{article.create_date}}</td>
+				<td><a href="edit_article/{{article.id}}" class="btn btn-default pull-right">Edit</a></td>
+				<td>
+					<form action="{{url_for('delete_article', id = article.id)}}" method="POST">
+					<input type="hidden" name="_method" value = "DELETE">
+					<input type="submit" value = "Delete" class = "btn btn-danger">
+				</form></td>
+			</tr>
+			{% endfor %}
+		  </table>
+          {%endblock %}
+
+        </div>
+      </div>
+  </body>
+</html>
