@@ -1,0 +1,13 @@
+﻿.csstransitions .animated,
+.animated {
+	visibility: visible;
+}
+
+.button  {
+	display: inline-block !important;
+}
+
+.animated .tab-content > .active,
+.tab-content>.active {
+	visibility: visible;
+}
