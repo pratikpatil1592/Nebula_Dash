@@ -14,12 +14,12 @@ To run the app go through the following steps:
 1. Make sure you install all above contents.
 
 2. Create a database in MySql and use it:
-a. CREATE DATABASE <db_name>
-b. USE <db_name>
+>> CREATE DATABASE <db_name>
+>> USE <db_name>
 
 3. Create two tables as follows:
-a. CREATE TABLE users(id INT(10), name VARCHAR(30) , email VARCHAR(50), username VARCHAR(30), password VARCHAR(100), register_date TIMESTAMP CURRENT_TIMESTAMP);
-b. CREATE TABLE articles(id INT(10) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) , author VARCHAR(100), body TEXT, create_date TIMESTAMP CURRENT_TIMESTAMP);
+>> CREATE TABLE users(id INT(10), name VARCHAR(30) , email VARCHAR(50), username VARCHAR(30), password VARCHAR(100), register_date TIMESTAMP CURRENT_TIMESTAMP);
+>> CREATE TABLE articles(id INT(10) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) , author VARCHAR(100), body TEXT, create_date TIMESTAMP CURRENT_TIMESTAMP);
 
 4. Once databases are created then you can run the app from commandline using
   >> python app.py
