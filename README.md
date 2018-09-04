@@ -34,3 +34,5 @@ To run the app go through the following steps:
   ```
 >> python app.py
 ```
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
