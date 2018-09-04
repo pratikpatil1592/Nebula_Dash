@@ -35,4 +35,14 @@ To run the app go through the following steps:
 >> python app.py
 ```
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+>Homepage
+![Nebula-Dash Home](https://github.com/pratikpatil1592/Nebula_Dash/blob/master/images/Home.jpg)
+
+> Login
+![Nebula-Dash Login Page](https://github.com/pratikpatil1592/Nebula_Dash/blob/master/images/Login.jpg)
+
+> Dashboard
+![Nebula-Dash Dashboard](https://github.com/pratikpatil1592/Nebula_Dash/blob/master/images/Dashboard.jpg)
+
+> Map
+![Nebula-Dash Map Visualization](https://github.com/pratikpatil1592/Nebula_Dash/blob/master/images/Map.jpg)
